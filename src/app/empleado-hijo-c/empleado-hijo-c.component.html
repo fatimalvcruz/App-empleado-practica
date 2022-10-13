@@ -1,0 +1,35 @@
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          {{indice + 1}} - {{empleadoDelista.nombre}} {{empleadoDelista.apellido}} {{empleadoDelista.cargo}} {{empleadoDelista.salario}}
+          <a [routerLink]="['/actualiza', indice ]" [queryParams]="{accion:'1'}">
+
+            Actualiza
+            
+          </a>
+          &nbsp; &nbsp;
+          <a [routerLink]="['/actualiza', indice ]" [queryParams]="{accion:'2'}">
+
+            Elimina
+            
+          </a>
+        </div>
+        
+        <ul style="list-style: none;">
+          <li *ngFor="let caracteristica of arrayCaracteristica">{{caracteristica}}</li>
+        </ul>
+
+        <app-caracteristicas-empleado (caracteristicasEmpleado)="agregarCarateristica($event)"></app-caracteristicas-empleado>
+      
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+ 
